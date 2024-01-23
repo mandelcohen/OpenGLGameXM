@@ -5,6 +5,8 @@
 
 using namespace std;
 
+void processInput(GLFWwindow*);
+
 void error_callback(int error, const char* msg) {
     cerr << " [" << error << "] " << msg << endl;
 }
@@ -22,7 +24,9 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#if __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
 
     // Request Window from Operating System
     GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr);
@@ -42,14 +46,27 @@ int main() {
         return -1;
     }
     glViewport(0, 0, 800, 600);
+    
+//    initialisation ends here
+//    ========================
+//    Real program starts here:
 
     // While the User doesn't want to Quit (X Button, Alt+F4)
     while (!glfwWindowShouldClose(window))
     {
+        processInput(window);
+        
         glfwSwapBuffers(window); // ??
         glfwPollEvents();
     }
     // Cleans up all the GLFW stuff
     glfwTerminate();
+    
     return 0;
+}
+
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
 }
