@@ -50,14 +50,24 @@ int main() {
 //    initialisation ends here
 //    ========================
 //    Real program starts here:
+    
+    float red = 0;
 
     // While the User doesn't want to Quit (X Button, Alt+F4)
     while (!glfwWindowShouldClose(window))
-    {
+    {   // handle input (e.g. close window on ESC)
+        glfwPollEvents();
         processInput(window);
         
+        red += 0.001f;
+        if(red > 1)
+            red -= 1;
+        
+        // render
+        glClearColor(red, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        // present
         glfwSwapBuffers(window); // ??
-        glfwPollEvents();
     }
     // Cleans up all the GLFW stuff
     glfwTerminate();
