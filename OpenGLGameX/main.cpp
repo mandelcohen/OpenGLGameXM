@@ -52,8 +52,19 @@ int main() {
 //    Real program starts here:
     
     float red = 0;
+    
+    float vertecies[] = {
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+        0.0f, 0.5f, 0.0f
+    };
+    
+    unsigned int VBO; // variable to store buffer id
+    glGenBuffers(1, &VBO); // ask openGL to create a buffer
+    glBindBuffer(GL_ARRAY_BUFFER, VBO); // tell GL to use this buffer
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertecies), vertecies, GL_STATIC_DRAW); // copy our verticies to the buffer
 
-    // While the User doesn't want to Quit (X Button, Alt+F4)
+    // While the User doesn't want to Quit
     while (!glfwWindowShouldClose(window))
     {   // handle input (e.g. close window on ESC)
         glfwPollEvents();
