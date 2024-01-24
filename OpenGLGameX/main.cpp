@@ -62,28 +62,39 @@ int main() {
     float red = 0;
     
     // Create array buffer and copy our verticies to GPU
-    float vertices[] = {
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f,
-        
-         0.0f, -0.5f, 0.0f,
-         0.9f, -0.5f, 0.0f,
-         0.45f, 0.5f, 0.0f
+    float firstVertices[] = {
+        -0.75f, 0.0f, 0.0f,
+        -0.5f,  0.5f, 0.0f,
+        -0.25f, 0.0f, 0.0f,
+    };
+    float secondVertices[] = {
+         0.25f, 0.0f, 0.0f,
+         0.5f,  0.5f, 0.0f,
+         0.75f, 0.0f, 0.0f
     };
     
-    unsigned int VBO, VAO; // variables to store the buffer IDs
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO); // ask
+    unsigned int firstVBO, firstVAO; // variables to store the buffer IDs
+    glGenVertexArrays(1, &firstVAO);
+    glGenBuffers(1, &firstVBO);
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBindVertexArray(firstVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, firstVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(firstVertices), firstVertices, GL_STATIC_DRAW);
     
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    
+    unsigned int secondVBO, secondVAO; // variables to store the buffer IDs
+    glGenVertexArrays(1, &secondVAO);
+    glGenBuffers(1, &secondVBO);
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    glBindVertexArray(secondVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, secondVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(secondVertices), secondVertices, GL_STATIC_DRAW);
     
     // configure vertex attributes, so the shader knows wher to find the position
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0); 
+    glEnableVertexAttribArray(0);
     
     // glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -142,18 +153,16 @@ int main() {
                 
         // draw our first triangle
         glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
+        glBindVertexArray(firstVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(secondVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         
-         
         // present (send the current frame to the computer screen)
         glfwSwapBuffers(window);
         //glfwPollEvents();
     }
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    glDeleteProgram(shaderProgram);
     
     // Cleans up all the GLFW stuff
     glfwTerminate();
