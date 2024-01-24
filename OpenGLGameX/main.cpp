@@ -15,6 +15,19 @@ void error_callback(int error, const char* msg) {
     cerr << " [" << error << "] " << msg << endl;
     }
 
+
+class Material{
+    unsigned int shaderProgram;
+public:
+    Material(const char* shaderSource){
+        // do all of the loading code
+    }
+    
+    void Activate(){
+        glUseProgram(shaderProgram);
+    }
+};
+
 int main() {
 
     glfwSetErrorCallback(error_callback);
@@ -73,6 +86,9 @@ int main() {
          0.75f, 0.0f, 0.0f
     };
     
+    // class called shader for the shader program
+    
+    
     unsigned int firstVBO, firstVAO; // variables to store the buffer IDs
     glGenVertexArrays(1, &firstVAO);
     glGenBuffers(1, &firstVBO);
@@ -115,25 +131,44 @@ int main() {
     glCompileShader(vertexShader);
 
     // fragment shader
-    const char* fragmentShaderSource = "#version 330 core\n"
+    const char* FirstFragmentShaderSource = "#version 330 core\n" //orange
         "out vec4 FragColor;\n"
         "void main()\n"
         "{\n"
         "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
         "}\n\0"; // gives further information, finds out wat color each pixel should be.
     
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader); // compile the shader on GPU
+    unsigned int firstFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(firstFragmentShader, 1, &FirstFragmentShaderSource, NULL);
+    glCompileShader(firstFragmentShader); // compile the shader on GPU
     
-    // link shaders, RENDER PIPELINE shader program
-    unsigned int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
+    unsigned int firstShaderProgram = glCreateProgram();
+    glAttachShader(firstShaderProgram, vertexShader);
+    glAttachShader(firstShaderProgram, firstFragmentShader);
+    glLinkProgram(firstShaderProgram);
     // clean up shaders after they've been linked into a program
     glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
+    glDeleteShader(firstFragmentShader);
+    
+    const char* SecondFragmentShaderSource = "#version 330 core\n" // yellow
+        "out vec4 FragColor;\n"
+        "void main()\n"
+        "{\n"
+        "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
+        "}\n\0"; // gives further information, finds out wat color each pixel should be.
+    
+    unsigned int secondFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(secondFragmentShader, 1, &SecondFragmentShaderSource, NULL);
+    glCompileShader(secondFragmentShader); // compile the shader on GPU
+    
+    // link shaders, RENDER PIPELINE shader program
+    unsigned int secondShaderProgram = glCreateProgram();
+    glAttachShader(secondShaderProgram, vertexShader);
+    glAttachShader(secondShaderProgram, secondFragmentShader);
+    glLinkProgram(secondShaderProgram);
+    // clean up shaders after they've been linked into a program
+    glDeleteShader(vertexShader);
+    glDeleteShader(secondFragmentShader);
     
     // While the User doesn't want to Quit
     while (!glfwWindowShouldClose(window))
@@ -152,10 +187,11 @@ int main() {
         // present
                 
         // draw our first triangle
-        glUseProgram(shaderProgram);
+        glUseProgram(firstShaderProgram);
         glBindVertexArray(firstVAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
+        glUseProgram(secondShaderProgram);
         glBindVertexArray(secondVAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
