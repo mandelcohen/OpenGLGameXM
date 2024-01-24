@@ -2,20 +2,14 @@
 #include <iostream>
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+#include "Window.h"
 
 using namespace std;
 
 void processInput(GLFWwindow*); // forward declaration, defined further down
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height){
-    glViewport(0, 0, width, height);
-    }
-
-void error_callback(int error, const char* msg) {
-    cerr << " [" << error << "] " << msg << endl;
-    }
-
-
+// example of material class
+/*
 class Material{
     unsigned int shaderProgram;
 public:
@@ -27,46 +21,11 @@ public:
         glUseProgram(shaderProgram);
     }
 };
+ */
 
 int main() {
 
-    glfwSetErrorCallback(error_callback);
-
-    // Initialize GLFW
-    if (!glfwInit()) { // Exit, if it failed
-        cout << "Failed to init GLFW" << endl;
-        return -1;
-    }
-
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-#if __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
-
-    // Request Window from Operating System
-    GLFWwindow* window {glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr)};
-    if (window == nullptr)
-    {
-        cout << "Failed to create GLFW window" << endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwMakeContextCurrent(window);
-
-    // Initialize GLAD (connects OpenGL Functions)
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        cout << "Failed to initialize GLAD" << endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    
-    int width, height;
-        glfwGetFramebufferSize(window, &width, &height);
-        glViewport(0, 0, width, height);
+    Window window {800, 600}; // using window class here
     
 //    initialisation ends here
 //    ========================
@@ -171,10 +130,10 @@ int main() {
     glDeleteShader(YellowMaterial);
     
     // While the User doesn't want to Quit
-    while (!glfwWindowShouldClose(window))
+    while (!glfwWindowShouldClose(window.window))
     {   // process input (e.g. close window on ESC)
         glfwPollEvents();
-        processInput(window);
+        processInput(window.window);
         
         // add variable for colour red
         red += 0.001f;
@@ -196,7 +155,7 @@ int main() {
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
         // present (send the current frame to the computer screen)
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(window.window);
     }
     
     // Cleans up all the GLFW stuff
