@@ -46,7 +46,7 @@ int main() {
 #endif
 
     // Request Window from Operating System
-    GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr);
+    GLFWwindow* window {glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr)};
     if (window == nullptr)
     {
         cout << "Failed to create GLFW window" << endl;
@@ -72,15 +72,15 @@ int main() {
 //    ========================
 //    Real program starts here:
     
-    float red = 0;
+    float red {};
     
     // Create array buffer and copy our verticies to GPU
-    float Triangle1[] = {
+    float Triangle1[] {
         -0.75f, 0.0f, 0.0f,
         -0.5f,  0.5f, 0.0f,
         -0.25f, 0.0f, 0.0f,
     };
-    float Triangle2[] = {
+    float Triangle2[] {
          0.25f, 0.0f, 0.0f,
          0.5f,  0.5f, 0.0f,
          0.75f, 0.0f, 0.0f
@@ -119,30 +119,30 @@ int main() {
     // build and compile our shader program
     // ------------------------------------
     // vertex shader
-    const char* vertexShaderSource = "#version 330 core\n"
+    const char* vertexShaderSource { "#version 330 core\n"
         "layout (location = 0) in vec3 aPos;\n"
         "void main()\n"
         "{\n"
         "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-        "}\0"; // the souce explains to the GPU where and what information should go out on the screen
+        "}\0"}; // the souce explains to the GPU where and what information should go out on the screen
 
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    unsigned int vertexShader { glCreateShader(GL_VERTEX_SHADER) };
+    glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
     glCompileShader(vertexShader);
 
     // fragment shader
-    const char* OrangeShaderSource = "#version 330 core\n" //orange
+    const char* OrangeShaderSource { "#version 330 core\n" //orange
         "out vec4 FragColor;\n"
         "void main()\n"
         "{\n"
         "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-        "}\n\0"; // gives further information, finds out wat color each pixel should be.
+        "}\n\0"}; // gives further information, finds out wat color each pixel should be.
     
-    unsigned int OrangeMaterial = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(OrangeMaterial, 1, &OrangeShaderSource, NULL);
+    unsigned int OrangeMaterial { glCreateShader(GL_FRAGMENT_SHADER) };
+    glShaderSource(OrangeMaterial, 1, &OrangeShaderSource, nullptr);
     glCompileShader(OrangeMaterial); // compile the shader on GPU
     
-    unsigned int OrangeShaderProgram = glCreateProgram();
+    unsigned int OrangeShaderProgram { glCreateProgram() };
     glAttachShader(OrangeShaderProgram, vertexShader);
     glAttachShader(OrangeShaderProgram, OrangeMaterial);
     glLinkProgram(OrangeShaderProgram);
@@ -150,19 +150,19 @@ int main() {
     glDeleteShader(vertexShader);
     glDeleteShader(OrangeMaterial);
     
-    const char* YellowShaderSource = "#version 330 core\n" // yellow
+    const char* YellowShaderSource { "#version 330 core\n" // yellow
         "out vec4 FragColor;\n"
         "void main()\n"
         "{\n"
         "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
-        "}\n\0"; // gives further information, finds out wat color each pixel should be.
+        "}\n\0"}; // gives further information, finds out wat color each pixel should be.
     
-    unsigned int YellowMaterial = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(YellowMaterial, 1, &YellowShaderSource, NULL);
+    unsigned int YellowMaterial { glCreateShader(GL_FRAGMENT_SHADER)};
+    glShaderSource(YellowMaterial, 1, &YellowShaderSource, nullptr);
     glCompileShader(YellowMaterial); // compile the shader on GPU
     
     // link shaders, RENDER PIPELINE shader program
-    unsigned int YellowShaderProgram = glCreateProgram();
+    unsigned int YellowShaderProgram { glCreateProgram() };
     glAttachShader(YellowShaderProgram, vertexShader);
     glAttachShader(YellowShaderProgram, YellowMaterial);
     glLinkProgram(YellowShaderProgram);
@@ -197,7 +197,6 @@ int main() {
         
         // present (send the current frame to the computer screen)
         glfwSwapBuffers(window);
-        //glfwPollEvents();
     }
     
     // Cleans up all the GLFW stuff
