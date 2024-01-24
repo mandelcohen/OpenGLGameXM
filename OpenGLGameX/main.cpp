@@ -75,12 +75,12 @@ int main() {
     float red = 0;
     
     // Create array buffer and copy our verticies to GPU
-    float firstVertices[] = {
+    float Triangle1[] = {
         -0.75f, 0.0f, 0.0f,
         -0.5f,  0.5f, 0.0f,
         -0.25f, 0.0f, 0.0f,
     };
-    float secondVertices[] = {
+    float Triangle2[] = {
          0.25f, 0.0f, 0.0f,
          0.5f,  0.5f, 0.0f,
          0.75f, 0.0f, 0.0f
@@ -89,24 +89,24 @@ int main() {
     // class called shader for the shader program
     
     
-    unsigned int firstVBO, firstVAO; // variables to store the buffer IDs
-    glGenVertexArrays(1, &firstVAO);
-    glGenBuffers(1, &firstVBO);
+    unsigned int VBO1, VAO1; // variables to store the buffer IDs
+    glGenVertexArrays(1, &VAO1);
+    glGenBuffers(1, &VBO1);
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(firstVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, firstVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(firstVertices), firstVertices, GL_STATIC_DRAW);
+    glBindVertexArray(VAO1);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO1);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Triangle1), Triangle1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     
-    unsigned int secondVBO, secondVAO; // variables to store the buffer IDs
-    glGenVertexArrays(1, &secondVAO);
-    glGenBuffers(1, &secondVBO);
+    unsigned int VBO2, VAO2; // variables to store the buffer IDs
+    glGenVertexArrays(1, &VAO2);
+    glGenBuffers(1, &VBO2);
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(secondVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, secondVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(secondVertices), secondVertices, GL_STATIC_DRAW);
+    glBindVertexArray(VAO2);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO2);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Triangle2), Triangle2, GL_STATIC_DRAW);
     
     // configure vertex attributes, so the shader knows wher to find the position
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -131,44 +131,44 @@ int main() {
     glCompileShader(vertexShader);
 
     // fragment shader
-    const char* FirstFragmentShaderSource = "#version 330 core\n" //orange
+    const char* OrangeShaderSource = "#version 330 core\n" //orange
         "out vec4 FragColor;\n"
         "void main()\n"
         "{\n"
         "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
         "}\n\0"; // gives further information, finds out wat color each pixel should be.
     
-    unsigned int firstFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(firstFragmentShader, 1, &FirstFragmentShaderSource, NULL);
-    glCompileShader(firstFragmentShader); // compile the shader on GPU
+    unsigned int OrangeMaterial = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(OrangeMaterial, 1, &OrangeShaderSource, NULL);
+    glCompileShader(OrangeMaterial); // compile the shader on GPU
     
-    unsigned int firstShaderProgram = glCreateProgram();
-    glAttachShader(firstShaderProgram, vertexShader);
-    glAttachShader(firstShaderProgram, firstFragmentShader);
-    glLinkProgram(firstShaderProgram);
+    unsigned int OrangeShaderProgram = glCreateProgram();
+    glAttachShader(OrangeShaderProgram, vertexShader);
+    glAttachShader(OrangeShaderProgram, OrangeMaterial);
+    glLinkProgram(OrangeShaderProgram);
     // clean up shaders after they've been linked into a program
     glDeleteShader(vertexShader);
-    glDeleteShader(firstFragmentShader);
+    glDeleteShader(OrangeMaterial);
     
-    const char* SecondFragmentShaderSource = "#version 330 core\n" // yellow
+    const char* YellowShaderSource = "#version 330 core\n" // yellow
         "out vec4 FragColor;\n"
         "void main()\n"
         "{\n"
         "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
         "}\n\0"; // gives further information, finds out wat color each pixel should be.
     
-    unsigned int secondFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(secondFragmentShader, 1, &SecondFragmentShaderSource, NULL);
-    glCompileShader(secondFragmentShader); // compile the shader on GPU
+    unsigned int YellowMaterial = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(YellowMaterial, 1, &YellowShaderSource, NULL);
+    glCompileShader(YellowMaterial); // compile the shader on GPU
     
     // link shaders, RENDER PIPELINE shader program
-    unsigned int secondShaderProgram = glCreateProgram();
-    glAttachShader(secondShaderProgram, vertexShader);
-    glAttachShader(secondShaderProgram, secondFragmentShader);
-    glLinkProgram(secondShaderProgram);
+    unsigned int YellowShaderProgram = glCreateProgram();
+    glAttachShader(YellowShaderProgram, vertexShader);
+    glAttachShader(YellowShaderProgram, YellowMaterial);
+    glLinkProgram(YellowShaderProgram);
     // clean up shaders after they've been linked into a program
     glDeleteShader(vertexShader);
-    glDeleteShader(secondFragmentShader);
+    glDeleteShader(YellowMaterial);
     
     // While the User doesn't want to Quit
     while (!glfwWindowShouldClose(window))
@@ -187,12 +187,12 @@ int main() {
         // present
                 
         // draw our first triangle
-        glUseProgram(firstShaderProgram);
-        glBindVertexArray(firstVAO);
+        glUseProgram(OrangeShaderProgram);
+        glBindVertexArray(VAO1);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
-        glUseProgram(secondShaderProgram);
-        glBindVertexArray(secondVAO);
+        glUseProgram(YellowShaderProgram);
+        glBindVertexArray(VAO2);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
         // present (send the current frame to the computer screen)
