@@ -4,8 +4,8 @@
 #include "Window.h"
 #include "Material.h"
 #include "Mesh.h"
-#include "Triangle.h"
 #include "Shader.h"
+#include "Triangle.h"
 
 using namespace std;
 
@@ -61,8 +61,10 @@ int main() {
         window.processInput();
         window.clear();
                 
-        a.render();
-        b.render();
+        orange.Use();
+        mesh1.Render();
+        
+        b.Render();
         
         window.Present();
     }

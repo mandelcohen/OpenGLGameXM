@@ -14,8 +14,8 @@ public:
         material = _material;
     }
     
-    void render(){
-        material->use();
-        mesh->render();
+    void Render(){
+        material->Use();
+        mesh->Render();
     }
 };
