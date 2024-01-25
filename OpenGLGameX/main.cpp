@@ -118,7 +118,7 @@ int main() {
     glDeleteShader(YellowMaterial);
     
     // While the User doesn't want to Quit
-    while (!glfwWindowShouldClose(window.window))
+    while (!window.shouldCLose())
     {   // process input (e.g. close window on ESC)
         glfwPollEvents();
         processInput(window.window);

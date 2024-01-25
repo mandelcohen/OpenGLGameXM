@@ -50,6 +50,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC9AB6FF2B625D60005109F3 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				ACCB9BDF2B615C4500FA7358 /* Window.h */,
+				AC9AB6FC2B625590005109F3 /* Material.h */,
+				AC9AB6FD2B6255A1005109F3 /* Mesh.h */,
+				AC9AB6FE2B6255B7005109F3 /* Triangle.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
@@ -72,10 +83,7 @@
 			children = (
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
-				ACCB9BDF2B615C4500FA7358 /* Window.h */,
-				AC9AB6FC2B625590005109F3 /* Material.h */,
-				AC9AB6FD2B6255A1005109F3 /* Mesh.h */,
-				AC9AB6FE2B6255B7005109F3 /* Triangle.h */,
+				AC9AB6FF2B625D60005109F3 /* Headers */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";
