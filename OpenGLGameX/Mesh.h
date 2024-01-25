@@ -1,5 +1,5 @@
-#pagma once
+#pragma once
 
 class Mesh{
     
-}
+};

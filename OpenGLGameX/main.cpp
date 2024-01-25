@@ -3,25 +3,13 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "Window.h"
+#include "Material.h"
+#include "Mesh.h"
+#include "Triangle.h"
 
 using namespace std;
 
 void processInput(GLFWwindow*); // forward declaration, defined further down
-
-// example of material class
-/*
-class Material{
-    unsigned int shaderProgram;
-public:
-    Material(const char* shaderSource){
-        // do all of the loading code
-    }
-    
-    void Activate(){
-        glUseProgram(shaderProgram);
-    }
-};
- */
 
 int main() {
 
