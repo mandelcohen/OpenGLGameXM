@@ -27,6 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC9AB6FC2B625590005109F3 /* Material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		AC9AB6FD2B6255A1005109F3 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		FA950AEE2B5F0F9A0094CAA0 /* OpenGLGameX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameX; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA950AF12B5F0F9A0094CAA0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -70,6 +73,9 @@
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				ACCB9BDF2B615C4500FA7358 /* Window.h */,
+				AC9AB6FC2B625590005109F3 /* Material.h */,
+				AC9AB6FD2B6255A1005109F3 /* Mesh.h */,
+				AC9AB6FE2B6255B7005109F3 /* Triangle.h */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";
