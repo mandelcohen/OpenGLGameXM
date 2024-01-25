@@ -1,13 +1,19 @@
 #pragma once
+#include "glad/glad.h"
+#include "Shader.h"
 
-class Material{
+class Material
+{
     unsigned int shaderProgram;
 public:
-    Material(const char* shaderSource){
-        // do all of the loading code
+    Material(Shader& vertexShader, Shader& fragmentShader){
+        unsigned int ShaderProgram { glCreateProgram() };
+        glAttachShader(ShaderProgram, vertexShader.shaderId);
+        glAttachShader(ShaderProgram, fragmentShader.shaderId);
+        glLinkProgram(ShaderProgram);
     }
     
-    void Activate(){
+    void use(){
         glUseProgram(shaderProgram);
     }
 };
