@@ -72,4 +72,15 @@ public:
     bool shouldCLose(){
         return glfwWindowShouldClose(this->window);
     }
+    
+    void Present(){
+        glfwSwapBuffers(window);
+    }
+    
+    void processInput()
+    {
+        glfwPollEvents();
+        if (glfwGetKey(this->window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, true);
+    }
 };

@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
@@ -9,59 +8,28 @@
 
 using namespace std;
 
-void processInput(GLFWwindow*); // forward declaration, defined further down
 
 int main() {
 
     Window window {800, 600}; // using window class here
     
-//    initialisation ends here
-//    ========================
-//    Real program starts here:
-    
     float red {};
     
-    // Create array buffer and copy our verticies to GPU
-    float Triangle1[] {
-        -0.75f, 0.0f, 0.0f,
+    float vertices1[] {
+        -1.0f, -0.5f, 0.0f,
+         0.0f, -0.5f, 0.0f,
         -0.5f,  0.5f, 0.0f,
-        -0.25f, 0.0f, 0.0f,
-    };
-    float Triangle2[] {
-         0.25f, 0.0f, 0.0f,
-         0.5f,  0.5f, 0.0f,
-         0.75f, 0.0f, 0.0f
     };
     
-    // class called shader for the shader program
+    Mesh mesh1 {vertices1, size(vertices1)};
     
+    float vertices2[] {
+        -1.0f, -0.5f, 0.0f,
+         0.0f, -0.5f, 0.0f,
+        -0.5f,  0.5f, 0.0f,
+    };
     
-    unsigned int VBO1, VAO1; // variables to store the buffer IDs
-    glGenVertexArrays(1, &VAO1);
-    glGenBuffers(1, &VBO1);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(VAO1);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO1);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Triangle1), Triangle1, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    
-    unsigned int VBO2, VAO2; // variables to store the buffer IDs
-    glGenVertexArrays(1, &VAO2);
-    glGenBuffers(1, &VBO2);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(VAO2);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO2);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Triangle2), Triangle2, GL_STATIC_DRAW);
-    
-    // configure vertex attributes, so the shader knows wher to find the position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    
-    // glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
+    Mesh mesh2 {vertices2, size(vertices2)};
     
     // build and compile our shader program
     // ------------------------------------
@@ -120,8 +88,7 @@ int main() {
     // While the User doesn't want to Quit
     while (!window.shouldCLose())
     {   // process input (e.g. close window on ESC)
-        glfwPollEvents();
-        processInput(window.window);
+        window.processInput();
         
         // add variable for colour red
         red += 0.001f;
@@ -129,21 +96,17 @@ int main() {
             red -= 1;
         
         // render (paint the current fram)
-        glClearColor(red, 0.3f, 0.3f, 1.0f);
+        glClearColor(red, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         // present
                 
         // draw our first triangle
         glUseProgram(OrangeShaderProgram);
-        glBindVertexArray(VAO1);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        
-        glUseProgram(YellowShaderProgram);
-        glBindVertexArray(VAO2);
+        mesh1.use();
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
         // present (send the current frame to the computer screen)
-        glfwSwapBuffers(window.window);
+        window.Present();
     }
     
     // Cleans up all the GLFW stuff
@@ -152,8 +115,4 @@ int main() {
     return 0;
 }
 
-void processInput(GLFWwindow* window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+
