@@ -20,7 +20,7 @@ public:
         glEnableVertexAttribArray(0);
     }
     
-    void use(){
+    void render(){
         glBindVertexArray(VAO);
     }
 };

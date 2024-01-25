@@ -5,6 +5,7 @@
 #include "Material.h"
 #include "Mesh.h"
 #include "Triangle.h"
+#include "Shader.h"
 
 using namespace std;
 
@@ -24,27 +25,15 @@ int main() {
     Mesh mesh1 {vertices1, size(vertices1)};
     
     float vertices2[] {
-        -1.0f, -0.5f, 0.0f,
          0.0f, -0.5f, 0.0f,
-        -0.5f,  0.5f, 0.0f,
+         1.0f, -0.5f, 0.0f,
+         0.5f,  0.5f, 0.0f,
     };
     
     Mesh mesh2 {vertices2, size(vertices2)};
     
-    // build and compile our shader program
-    // ------------------------------------
-    // vertex shader
-    const char* vertexShaderSource { "#version 330 core\n"
-        "layout (location = 0) in vec3 aPos;\n"
-        "void main()\n"
-        "{\n"
-        "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-        "}\0"}; // the souce explains to the GPU where and what information should go out on the screen
-
-    unsigned int vertexShader { glCreateShader(GL_VERTEX_SHADER) };
-    glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
-    glCompileShader(vertexShader);
-
+    Shader vertexShader {};
+    
     // fragment shader
     const char* OrangeShaderSource { "#version 330 core\n" //orange
         "out vec4 FragColor;\n"
@@ -58,11 +47,11 @@ int main() {
     glCompileShader(OrangeMaterial); // compile the shader on GPU
     
     unsigned int OrangeShaderProgram { glCreateProgram() };
-    glAttachShader(OrangeShaderProgram, vertexShader);
+    glAttachShader(OrangeShaderProgram, vertexShader.shaderId);
     glAttachShader(OrangeShaderProgram, OrangeMaterial);
     glLinkProgram(OrangeShaderProgram);
     // clean up shaders after they've been linked into a program
-    glDeleteShader(vertexShader);
+    glDeleteShader(vertexShader.shaderId);
     glDeleteShader(OrangeMaterial);
     
     const char* YellowShaderSource { "#version 330 core\n" // yellow
@@ -78,11 +67,11 @@ int main() {
     
     // link shaders, RENDER PIPELINE shader program
     unsigned int YellowShaderProgram { glCreateProgram() };
-    glAttachShader(YellowShaderProgram, vertexShader);
+    glAttachShader(YellowShaderProgram, vertexShader.shaderId);
     glAttachShader(YellowShaderProgram, YellowMaterial);
     glLinkProgram(YellowShaderProgram);
     // clean up shaders after they've been linked into a program
-    glDeleteShader(vertexShader);
+    glDeleteShader(vertexShader.shaderId);
     glDeleteShader(YellowMaterial);
     
     // While the User doesn't want to Quit
@@ -96,16 +85,17 @@ int main() {
             red -= 1;
         
         // render (paint the current fram)
-        glClearColor(red, 0.2f, 0.2f, 1.0f);
+        glClearColor(red, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        // present
                 
-        // draw our first triangle
         glUseProgram(OrangeShaderProgram);
-        mesh1.use();
+        mesh1.render();
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
-        // present (send the current frame to the computer screen)
+        glUseProgram(YellowShaderProgram);
+        mesh2.render();
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        
         window.Present();
     }
     
