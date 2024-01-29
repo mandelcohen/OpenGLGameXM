@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = yellowFragmentShader.glsl; sourceTree = "<group>"; };
 		AC9AB6FC2B625590005109F3 /* Material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		AC9AB6FD2B6255A1005109F3 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
@@ -57,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC4651BC2B67FD52004C6589 /* glsl */ = {
+			isa = PBXGroup;
+			children = (
+				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
+				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
+				AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */,
+			);
+			path = glsl;
+			sourceTree = "<group>";
+		};
 		AC9AB6FF2B625D60005109F3 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,11 +100,10 @@
 		FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */ = {
 			isa = PBXGroup;
 			children = (
-				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
-				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				AC9AB6FF2B625D60005109F3 /* Headers */,
+				AC4651BC2B67FD52004C6589 /* glsl */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";

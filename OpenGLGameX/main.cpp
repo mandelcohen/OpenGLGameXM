@@ -32,16 +32,11 @@ int main() {
     
     Shader orangeShader {"orangeFragmentShader.glsl", GL_FRAGMENT_SHADER};
     
-    Shader yellowShader {"#version 330 core\n"
-        "out vec4 FragColor;\n"
-        "void main()\n"
-        "{\n"
-        "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
-        "}\n\0", GL_FRAGMENT_SHADER};
+    Shader yellowShader {"yellowFragmentShader.glsl", GL_FRAGMENT_SHADER};
 
     Material orange {vertexShader, orangeShader};
     
-    Material yellow {vertexShader, yellowShader};
+    Material yellow {vertexShader, orangeShader};
     
     Triangle a {&mesh1, &orange};
     Triangle b {&mesh2, &yellow};
@@ -51,9 +46,7 @@ int main() {
         window.processInput();
         window.clear();
                 
-        orange.Use();
-        mesh1.Render();
-        
+        a.Render();
         b.Render();
         
         window.Present();
