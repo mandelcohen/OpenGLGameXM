@@ -30,6 +30,8 @@
 		AC9AB6FC2B625590005109F3 /* Material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		AC9AB6FD2B6255A1005109F3 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexShader.glsl; sourceTree = "<group>"; };
+		ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = orangeFragmentShader.glsl; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		ACEE434C2B629087003979DA /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		FA950AEE2B5F0F9A0094CAA0 /* OpenGLGameX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameX; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,8 @@
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
+				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
+				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
 				FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */,
 				FA950AEF2B5F0F9A0094CAA0 /* Products */,
 				FA950AF82B5F121D0094CAA0 /* Frameworks */,
