@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */; };
+		AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
 		FA950B052B5F15F50094CAA0 /* libglfw.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA950AF92B5F121D0094CAA0 /* libglfw.3.dylib */; };
 		FA950B072B5F162A0094CAA0 /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA950AF92B5F121D0094CAA0 /* libglfw.3.dylib */; };
@@ -20,6 +22,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */,
+				AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */,
 				FA950B052B5F15F50094CAA0 /* libglfw.3.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,8 +72,6 @@
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
-				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
-				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
 				FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */,
 				FA950AEF2B5F0F9A0094CAA0 /* Products */,
 				FA950AF82B5F121D0094CAA0 /* Frameworks */,
@@ -87,6 +89,8 @@
 		FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */ = {
 			isa = PBXGroup;
 			children = (
+				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
+				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				AC9AB6FF2B625D60005109F3 /* Headers */,
