@@ -13,9 +13,7 @@ struct Colour {
     
     float r, g, b, a;
 };
-const Colour Colour::red{1, 0, 0, 1};
-const Colour Colour::green{0, 1, 0, 1};
-const Colour Colour::blue{0, 0, 1, 1};
+
 
 struct Vertex {
     Vector3 pos;
@@ -46,6 +44,7 @@ public:
         
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, pos));
         glEnableVertexAttribArray(0);
+        
         glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, col));
         glEnableVertexAttribArray(1);
     }

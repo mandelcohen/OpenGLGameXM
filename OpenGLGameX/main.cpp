@@ -67,10 +67,10 @@ int main() {
     Material withAttributes {vertexAttributes, attributesShader};
     
     
-    Triangle a {&mesh1, &withAttributes};
+    Triangle a {&mesh1, &rainbow};
     a.red = 1; a.green = 0; a.blue = 0;
     
-    Triangle b {&mesh2, &withAttributes};
+    Triangle b {&mesh2, &rainbow};
     b.red = 0; b.green = 1; b.blue = 0;
     
     Triangle c {&mesh3, &withAttributes};

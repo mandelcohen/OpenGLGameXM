@@ -12,6 +12,11 @@
 		AC8BE66F2B69132900C36B29 /* UniformShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */; };
 		AC8BE6722B692D5100C36B29 /* vertexAttributes.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */; };
 		AC8BE6732B692D5600C36B29 /* fragmentAttributes.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */; };
+		AC8BE6752B693EB300C36B29 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE6742B693EB300C36B29 /* Mesh.cpp */; };
+		AC8BE6772B693EF300C36B29 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE6762B693EF300C36B29 /* Shader.cpp */; };
+		AC8BE6792B693F2C00C36B29 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE6782B693F2C00C36B29 /* Triangle.cpp */; };
+		AC8BE67B2B693F5300C36B29 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67A2B693F5300C36B29 /* Window.cpp */; };
+		AC8BE67D2B693F7600C36B29 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67C2B693F7600C36B29 /* Material.cpp */; };
 		ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */; };
 		ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
@@ -45,6 +50,11 @@
 		AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = UniformShader.glsl; sourceTree = "<group>"; };
 		AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexAttributes.glsl; sourceTree = "<group>"; };
 		AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragmentAttributes.glsl; sourceTree = "<group>"; };
+		AC8BE6742B693EB300C36B29 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		AC8BE6762B693EF300C36B29 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		AC8BE6782B693F2C00C36B29 /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		AC8BE67A2B693F5300C36B29 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		AC8BE67C2B693F7600C36B29 /* Material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
 		AC9AB6FC2B625590005109F3 /* Material.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		AC9AB6FD2B6255A1005109F3 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
@@ -122,6 +132,11 @@
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				AC9AB6FF2B625D60005109F3 /* Headers */,
 				AC4651BC2B67FD52004C6589 /* glsl */,
+				AC8BE6742B693EB300C36B29 /* Mesh.cpp */,
+				AC8BE6762B693EF300C36B29 /* Shader.cpp */,
+				AC8BE6782B693F2C00C36B29 /* Triangle.cpp */,
+				AC8BE67A2B693F5300C36B29 /* Window.cpp */,
+				AC8BE67C2B693F7600C36B29 /* Material.cpp */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";
@@ -192,7 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8BE6752B693EB300C36B29 /* Mesh.cpp in Sources */,
+				AC8BE67D2B693F7600C36B29 /* Material.cpp in Sources */,
+				AC8BE67B2B693F5300C36B29 /* Window.cpp in Sources */,
 				FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */,
+				AC8BE6772B693EF300C36B29 /* Shader.cpp in Sources */,
+				AC8BE6792B693F2C00C36B29 /* Triangle.cpp in Sources */,
 				FA950B092B5F16770094CAA0 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
