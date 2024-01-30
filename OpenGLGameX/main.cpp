@@ -33,20 +33,24 @@ int main() {
     Shader orangeShader {"orangeFragmentShader.glsl", GL_FRAGMENT_SHADER};
     
     Shader yellowShader {"yellowFragmentShader.glsl", GL_FRAGMENT_SHADER};
+    
+    Shader rainbowShader {"rainbowShader.glsl", GL_FRAGMENT_SHADER};
 
     Material orange {vertexShader, orangeShader};
     
-    Material yellow {vertexShader, orangeShader};
+    Material yellow {vertexShader, yellowShader};
     
-    Triangle a {&mesh1, &orange};
-    Triangle b {&mesh2, &yellow};
+    Material rainbow {vertexShader, rainbowShader};
+    
+    Triangle a {&mesh1, &rainbow};
+    Triangle b {&mesh2, &rainbow};
     
     while (!window.shouldCLose())
     {
         window.processInput();
         window.clear();
                 
-        a.Render();
+        a.Render();s
         b.Render();
         
         window.Present();
