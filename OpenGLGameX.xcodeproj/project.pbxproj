@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */; };
 		AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */; };
+		ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */; };
+		ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
 		FA950B052B5F15F50094CAA0 /* libglfw.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA950AF92B5F121D0094CAA0 /* libglfw.3.dylib */; };
 		FA950B072B5F162A0094CAA0 /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA950AF92B5F121D0094CAA0 /* libglfw.3.dylib */; };
@@ -22,6 +24,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */,
+				ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */,
 				AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */,
 				AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */,
 				FA950B052B5F15F50094CAA0 /* libglfw.3.dylib in CopyFiles */,
@@ -39,6 +43,7 @@
 		ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = orangeFragmentShader.glsl; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		ACEE434C2B629087003979DA /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = rainbowShader.glsl; sourceTree = "<group>"; };
 		FA950AEE2B5F0F9A0094CAA0 /* OpenGLGameX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameX; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA950AF12B5F0F9A0094CAA0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FA950AF92B5F121D0094CAA0 /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.dylib; path = "ext/glfw-3.3.9.bin.MACOS/lib-universal/libglfw.3.dylib"; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 				ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */,
 				ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */,
 				AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */,
+				ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */,
 			);
 			path = glsl;
 			sourceTree = "<group>";
