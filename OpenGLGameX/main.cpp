@@ -27,7 +27,7 @@ int main() {
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 //    glGenerateMipmap(GL_TEXTURE_2D);
     stbi_image_free(data);
-
+    
     
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
@@ -68,6 +68,8 @@ int main() {
     
     Shader vertexAttributes {"vertexAttributes.glsl", GL_VERTEX_SHADER};
     
+    Shader textureV {"textureVS.glsl", GL_VERTEX_SHADER};
+    
     
     Shader orangeShader {"orangeFragmentShader.glsl", GL_FRAGMENT_SHADER};
     
@@ -78,6 +80,8 @@ int main() {
     Shader uniformShader {"UniformShader.glsl", GL_FRAGMENT_SHADER};
 
     Shader attributesShader{"fragmentAttributes.glsl", GL_FRAGMENT_SHADER};
+    
+    Shader textureF {"textureFS.glsl", GL_FRAGMENT_SHADER};
     
     
     Material orange {vertexShader, orangeShader};
@@ -90,6 +94,8 @@ int main() {
     
     Material withAttributes {vertexAttributes, attributesShader};
     
+    Material texture1 {textureV, textureF};
+    
     
     Triangle a {&mesh1, &rainbow};
     a.red = 1; a.green = 0; a.blue = 0; a.offset = 0.2;
@@ -99,7 +105,7 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
-    Triangle d {&mesh4, &uniform};
+    Triangle d {&mesh4, &rainbow};
     
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );

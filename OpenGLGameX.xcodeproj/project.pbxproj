@@ -18,6 +18,7 @@
 		AC8BE6792B693F2C00C36B29 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE6782B693F2C00C36B29 /* Triangle.cpp */; };
 		AC8BE67B2B693F5300C36B29 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67A2B693F5300C36B29 /* Window.cpp */; };
 		AC8BE67D2B693F7600C36B29 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67C2B693F7600C36B29 /* Material.cpp */; };
+		ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5162B6A818D00432A21 /* container.jpg */; };
 		ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */; };
 		ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
@@ -33,6 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */,
 				AC8BE6732B692D5600C36B29 /* fragmentAttributes.glsl in CopyFiles */,
 				AC8BE6722B692D5100C36B29 /* vertexAttributes.glsl in CopyFiles */,
 				AC8BE66F2B69132900C36B29 /* UniformShader.glsl in CopyFiles */,
@@ -62,6 +64,9 @@
 		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexShader.glsl; sourceTree = "<group>"; };
 		ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = orangeFragmentShader.glsl; sourceTree = "<group>"; };
+		ACB3E5142B6A7BBE00432A21 /* texutreVS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = texutreVS.glsl; sourceTree = "<group>"; };
+		ACB3E5152B6A7C9700432A21 /* textureFS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = textureFS.glsl; sourceTree = "<group>"; };
+		ACB3E5162B6A818D00432A21 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		ACEE434C2B629087003979DA /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = rainbowShader.glsl; sourceTree = "<group>"; };
@@ -94,6 +99,8 @@
 				AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */,
 				AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */,
 				AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */,
+				ACB3E5142B6A7BBE00432A21 /* texutreVS.glsl */,
+				ACB3E5152B6A7C9700432A21 /* textureFS.glsl */,
 			);
 			path = glsl;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 		FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */ = {
 			isa = PBXGroup;
 			children = (
+				ACB3E5162B6A818D00432A21 /* container.jpg */,
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				ACB3E5102B6A7A0F00432A21 /* cpp files */,

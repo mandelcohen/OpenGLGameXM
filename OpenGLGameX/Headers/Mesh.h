@@ -23,7 +23,7 @@ struct Colour {
 struct Vertex {
     Vector3 pos;
     Colour col{1, 1, 1, 1};
-    Vector2 pos2;
+    Vector2 UV;
 };
 
 class Mesh
@@ -35,7 +35,8 @@ public:
     
     void Render(){
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+//        glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     }
     
     Mesh(Vertex* vertices, size_t count){
@@ -53,5 +54,8 @@ public:
         
         glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, col));
         glEnableVertexAttribArray(1);
+        
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(Vertex), (void*)offsetof(Vertex, UV));
+        glEnableVertexAttribArray(2);
     }
 };
