@@ -6,10 +6,15 @@ struct Vector3 {
     float x, y, z;
 };
 
+struct Vector2{
+    float u, v;
+};
+
 struct Colour {
     static const Colour red;
     static const Colour green;
     static const Colour blue;
+    static const Colour yellow;
     
     float r, g, b, a;
 };
@@ -18,6 +23,7 @@ struct Colour {
 struct Vertex {
     Vector3 pos;
     Colour col{1, 1, 1, 1};
+    Vector2 pos2;
 };
 
 class Mesh
