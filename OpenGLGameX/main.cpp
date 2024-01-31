@@ -37,7 +37,6 @@ int main() {
 //    glGenerateMipmap(GL_TEXTURE_2D);
     stbi_image_free(data);
     
-    
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
         Vertex{Vector3{ 0.0f, -0.5f, 0.0f}},
@@ -64,13 +63,15 @@ int main() {
     
     Vertex vertices4[]{
         // positions                         // colors          // texture coords
-        Vertex{Vector3{0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},   // top right
-        Vertex{Vector3{0.5f, -0.5f, 0.0f},   Colour::green,     Vector2{1.0f, 0.0f}},   // bottom right
-        Vertex{Vector3{0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}},   // bottom left
-        Vertex{Vector3{0.5f,  0.5f, 0.0f},   Colour::yellow,    Vector2{0.0f, 1.0f}}    // top left
+        Vertex{Vector3{ 0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},   // top right
+        Vertex{Vector3{ 0.5f, -0.5f, 0.0f},   Colour::green,     Vector2{1.0f, 0.0f}},   // bottom right
+        Vertex{Vector3{-0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}},   // bottom left
+        Vertex{Vector3{-0.5f,  0.5f, 0.0f},   Colour::yellow,    Vector2{0.0f, 1.0f}},
+        Vertex{Vector3{ 0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},
+        Vertex{Vector3{-0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}}
     };
     
-    Mesh mesh4 {vertices4, size(vertices4)};
+    Mesh mesh4 { vertices4, size(vertices4) };
     
     
     Shader vertexShader {"vertexShader.glsl", GL_VERTEX_SHADER};
@@ -115,7 +116,7 @@ int main() {
     Triangle c {&mesh3, &rainbow};
     
     Triangle d {&mesh4, &texture1};
-    
+
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
     
@@ -128,6 +129,11 @@ int main() {
 //        a.Render();
 //        b.Render();
 //        c.Render();
+        
+        float timeValue = glfwGetTime();
+        float time = (sin(timeValue) / 2.0f) + 0.5f;
+        d.offset = time;
+        
         d.Render();
         window.Present();
     }
