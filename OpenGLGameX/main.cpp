@@ -25,6 +25,15 @@ int main() {
     glBindTexture(GL_TEXTURE_2D, textureID);
     
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
 //    glGenerateMipmap(GL_TEXTURE_2D);
     stbi_image_free(data);
     
@@ -105,7 +114,7 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
-    Triangle d {&mesh4, &uniform};
+    Triangle d {&mesh4, &texture1};
     
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );

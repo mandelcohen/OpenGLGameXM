@@ -19,6 +19,8 @@
 		AC8BE67B2B693F5300C36B29 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67A2B693F5300C36B29 /* Window.cpp */; };
 		AC8BE67D2B693F7600C36B29 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8BE67C2B693F7600C36B29 /* Material.cpp */; };
 		ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5162B6A818D00432A21 /* container.jpg */; };
+		ACB3E5192B6A8F9500432A21 /* textureFS.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5152B6A7C9700432A21 /* textureFS.glsl */; };
+		ACB3E51A2B6A8F9500432A21 /* textureVS.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5182B6A8D2600432A21 /* textureVS.glsl */; };
 		ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */; };
 		ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
@@ -34,6 +36,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				ACB3E5192B6A8F9500432A21 /* textureFS.glsl in CopyFiles */,
+				ACB3E51A2B6A8F9500432A21 /* textureVS.glsl in CopyFiles */,
 				ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */,
 				AC8BE6732B692D5600C36B29 /* fragmentAttributes.glsl in CopyFiles */,
 				AC8BE6722B692D5100C36B29 /* vertexAttributes.glsl in CopyFiles */,
@@ -133,6 +137,7 @@
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
+				ACB3E5162B6A818D00432A21 /* container.jpg */,
 				FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */,
 				FA950AEF2B5F0F9A0094CAA0 /* Products */,
 				FA950AF82B5F121D0094CAA0 /* Frameworks */,
@@ -150,7 +155,6 @@
 		FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */ = {
 			isa = PBXGroup;
 			children = (
-				ACB3E5162B6A818D00432A21 /* container.jpg */,
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
 				ACB3E5102B6A7A0F00432A21 /* cpp files */,
