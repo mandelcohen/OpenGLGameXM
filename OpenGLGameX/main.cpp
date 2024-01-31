@@ -105,7 +105,7 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
-    Triangle d {&mesh4, &rainbow};
+    Triangle d {&mesh4, &uniform};
     
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );

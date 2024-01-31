@@ -64,9 +64,9 @@
 		AC9AB6FE2B6255B7005109F3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexShader.glsl; sourceTree = "<group>"; };
 		ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = orangeFragmentShader.glsl; sourceTree = "<group>"; };
-		ACB3E5142B6A7BBE00432A21 /* texutreVS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = texutreVS.glsl; sourceTree = "<group>"; };
 		ACB3E5152B6A7C9700432A21 /* textureFS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = textureFS.glsl; sourceTree = "<group>"; };
 		ACB3E5162B6A818D00432A21 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		ACB3E5182B6A8D2600432A21 /* textureVS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = textureVS.glsl; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		ACEE434C2B629087003979DA /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = rainbowShader.glsl; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 				AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */,
 				AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */,
 				AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */,
-				ACB3E5142B6A7BBE00432A21 /* texutreVS.glsl */,
 				ACB3E5152B6A7C9700432A21 /* textureFS.glsl */,
+				ACB3E5182B6A8D2600432A21 /* textureVS.glsl */,
 			);
 			path = glsl;
 			sourceTree = "<group>";

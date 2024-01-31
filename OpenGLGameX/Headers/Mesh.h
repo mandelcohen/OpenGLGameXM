@@ -35,8 +35,8 @@ public:
     
     void Render(){
         glBindVertexArray(VAO);
-//        glDrawArrays(GL_TRIANGLES, 0, vertexCount);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+//        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     }
     
     Mesh(Vertex* vertices, size_t count){
