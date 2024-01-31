@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */; };
 		AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */; };
-		AC7C8C792B6A59F9009BA47B /* stb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC7C8C772B6A59F9009BA47B /* stb.cpp */; };
+		AC7C8C7D2B6A5F67009BA47B /* stb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC7C8C7C2B6A5F67009BA47B /* stb.cpp */; };
 		AC8BE66F2B69132900C36B29 /* UniformShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */; };
 		AC8BE6722B692D5100C36B29 /* vertexAttributes.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */; };
 		AC8BE6732B692D5600C36B29 /* fragmentAttributes.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */; };
@@ -48,8 +48,7 @@
 
 /* Begin PBXFileReference section */
 		AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = yellowFragmentShader.glsl; sourceTree = "<group>"; };
-		AC7C8C772B6A59F9009BA47B /* stb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb.cpp; sourceTree = "<group>"; };
-		AC7C8C782B6A59F9009BA47B /* stb.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stb.hpp; sourceTree = "<group>"; };
+		AC7C8C7C2B6A5F67009BA47B /* stb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb.cpp; sourceTree = "<group>"; };
 		AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = UniformShader.glsl; sourceTree = "<group>"; };
 		AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexAttributes.glsl; sourceTree = "<group>"; };
 		AC8BE6712B69262500C36B29 /* fragmentAttributes.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragmentAttributes.glsl; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 				AC9AB6FD2B6255A1005109F3 /* Mesh.h */,
 				AC9AB6FE2B6255B7005109F3 /* Triangle.h */,
 				ACEE434C2B629087003979DA /* Shader.h */,
-				AC7C8C782B6A59F9009BA47B /* stb.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -141,7 +139,7 @@
 				AC8BE6782B693F2C00C36B29 /* Triangle.cpp */,
 				AC8BE67A2B693F5300C36B29 /* Window.cpp */,
 				AC8BE67C2B693F7600C36B29 /* Material.cpp */,
-				AC7C8C772B6A59F9009BA47B /* stb.cpp */,
+				AC7C8C7C2B6A5F67009BA47B /* stb.cpp */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";
@@ -213,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8BE6752B693EB300C36B29 /* Mesh.cpp in Sources */,
-				AC7C8C792B6A59F9009BA47B /* stb.cpp in Sources */,
+				AC7C8C7D2B6A5F67009BA47B /* stb.cpp in Sources */,
 				AC8BE67D2B693F7600C36B29 /* Material.cpp in Sources */,
 				AC8BE67B2B693F5300C36B29 /* Window.cpp in Sources */,
 				FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */,
@@ -361,6 +359,7 @@
 				USER_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/ext/glad/include/**",
 					"$(SRCROOT)/ext/glfw-3.3.9.bin.MACOS/include/**",
+					"$(SRCROOT)/ext/stb/include/**",
 				);
 			};
 			name = Debug;
@@ -377,6 +376,7 @@
 				USER_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/ext/glad/include/**",
 					"$(SRCROOT)/ext/glfw-3.3.9.bin.MACOS/include/**",
+					"$(SRCROOT)/ext/stb/include/**",
 				);
 			};
 			name = Release;
