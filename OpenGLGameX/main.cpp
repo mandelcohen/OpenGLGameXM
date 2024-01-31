@@ -67,11 +67,11 @@ int main() {
     Material withAttributes {vertexAttributes, attributesShader};
     
     
-    Triangle a {&mesh1, &uniform};
-    a.red = 1; a.green = 0; a.blue = 0; a.offset = 0.5;
+    Triangle a {&mesh1, &rainbow};
+    a.red = 1; a.green = 0; a.blue = 0; a.offset = 0.2;
     
-    Triangle b {&mesh2, &uniform};
-    b.red = 0; b.green = 1; b.blue = 0; b.offset = 0.5;
+    Triangle b {&mesh2, &rainbow};
+    b.red = 0; b.green = 1; b.blue = 0; b.offset = 0;
     
     Triangle c {&mesh3, &rainbow};
     c.offset = 0.5f;
