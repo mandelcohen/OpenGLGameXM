@@ -16,8 +16,18 @@ int main() {
     
     Window window {800, 600};
     
+//    texture
     int width, height, nrChannels;
     unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+    
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+//    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(data);
+
     
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
@@ -42,6 +52,16 @@ int main() {
     };
     
     Mesh mesh3 {vertices3, size(vertices3)};
+    
+    Vertex vertices4[]{
+        // positions                         // colors          // texture coords
+        Vertex{Vector3{0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},   // top right
+        Vertex{Vector3{0.5f, -0.5f, 0.0f},   Colour::green,     Vector2{1.0f, 0.0f}},   // bottom right
+        Vertex{Vector3{0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}},   // bottom left
+        Vertex{Vector3{0.5f,  0.5f, 0.0f},   Colour::yellow,    Vector2{0.0f, 1.0f}}    // top left
+    };
+    
+    Mesh mesh4 {vertices4, size(vertices4)};
     
     
     Shader vertexShader {"vertexShader.glsl", GL_VERTEX_SHADER};
@@ -79,6 +99,8 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
+    Triangle d {&mesh4, &uniform};
+    
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
     
@@ -90,7 +112,8 @@ int main() {
                 
 //        a.Render();
 //        b.Render();
-        c.Render();
+//        c.Render();
+        d.Render();
         window.Present();
     }
     

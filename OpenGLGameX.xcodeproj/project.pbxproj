@@ -110,6 +110,19 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		ACB3E5102B6A7A0F00432A21 /* cpp files */ = {
+			isa = PBXGroup;
+			children = (
+				AC8BE6742B693EB300C36B29 /* Mesh.cpp */,
+				AC8BE6762B693EF300C36B29 /* Shader.cpp */,
+				AC8BE6782B693F2C00C36B29 /* Triangle.cpp */,
+				AC8BE67A2B693F5300C36B29 /* Window.cpp */,
+				AC8BE67C2B693F7600C36B29 /* Material.cpp */,
+				AC7C8C7C2B6A5F67009BA47B /* stb.cpp */,
+			);
+			path = "cpp files";
+			sourceTree = "<group>";
+		};
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +145,9 @@
 			children = (
 				FA950B082B5F16770094CAA0 /* glad.c */,
 				FA950AF12B5F0F9A0094CAA0 /* main.cpp */,
+				ACB3E5102B6A7A0F00432A21 /* cpp files */,
 				AC9AB6FF2B625D60005109F3 /* Headers */,
 				AC4651BC2B67FD52004C6589 /* glsl */,
-				AC8BE6742B693EB300C36B29 /* Mesh.cpp */,
-				AC8BE6762B693EF300C36B29 /* Shader.cpp */,
-				AC8BE6782B693F2C00C36B29 /* Triangle.cpp */,
-				AC8BE67A2B693F5300C36B29 /* Window.cpp */,
-				AC8BE67C2B693F7600C36B29 /* Material.cpp */,
-				AC7C8C7C2B6A5F67009BA47B /* stb.cpp */,
 			);
 			path = OpenGLGameX;
 			sourceTree = "<group>";
