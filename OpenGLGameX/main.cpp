@@ -1,61 +1,23 @@
 #include <iostream>
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+#include "stb_image.h"
 #include "Window.h"
 #include "Material.h"
 #include "Mesh.h"
 #include "Shader.h"
 #include "Triangle.h"
-#include "stb_image.h"
+#include "Texture.h"
 
 using namespace std;
-
-
 
 int main() {
     
     Window window {800, 600};
-    
-//    texture
-    int width, height, nrChannels;
-    unsigned char* data = stbi_load("swirl.jpg", &width, &height, &nrChannels, 0);
-    
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-    glActiveTexture(GL_TEXTURE0); // before binding
-    glBindTexture(GL_TEXTURE_2D, textureID);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-    
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char* data1 = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
-    
-    unsigned int textureID1;
-    glGenTextures(1, &textureID1);
-    glActiveTexture(GL_TEXTURE1); // before binding
-    glBindTexture(GL_TEXTURE_2D, textureID1);
-    if (data1)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data1);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data1);
-    
-    
-    
-    
+        
+    Texture texture1 { "container.jpg", GL_TEXTURE0};
+    Texture texture2 { "swirl.jpg", GL_TEXTURE1};
+
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
         Vertex{Vector3{ 0.0f, -0.5f, 0.0f}},
@@ -123,7 +85,7 @@ int main() {
     
     Material withAttributes {vertexAttributes, attributesShader};
     
-    Material texture1 {textureV, textureF};
+    Material texMaterial {textureV, textureF};
     
     
     Triangle a {&mesh1, &rainbow};
@@ -134,7 +96,7 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
-    Triangle d {&mesh4, &texture1};
+    Triangle d {&mesh4, &texMaterial};
 
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );

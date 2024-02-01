@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC4651B92B67FC6D004C6589 /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E05F2B67F1C500AF2EC9 /* vertexShader.glsl */; };
 		AC4651BA2B67FC71004C6589 /* orangeFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACA5E0602B67F22F00AF2EC9 /* orangeFragmentShader.glsl */; };
+		AC6074D72B6BCAE8008F356D /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC6074D52B6BCAE8008F356D /* Texture.cpp */; };
 		AC7C8C7D2B6A5F67009BA47B /* stb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC7C8C7C2B6A5F67009BA47B /* stb.cpp */; };
 		AC8BE66F2B69132900C36B29 /* UniformShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */; };
 		AC8BE6722B692D5100C36B29 /* vertexAttributes.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */; };
@@ -60,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = yellowFragmentShader.glsl; sourceTree = "<group>"; };
+		AC6074D52B6BCAE8008F356D /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		AC6074D62B6BCAE8008F356D /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		AC7C8C7C2B6A5F67009BA47B /* stb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb.cpp; sourceTree = "<group>"; };
 		AC8BE66E2B690B1E00C36B29 /* UniformShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = UniformShader.glsl; sourceTree = "<group>"; };
 		AC8BE6702B69259A00C36B29 /* vertexAttributes.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexAttributes.glsl; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 				AC9AB6FD2B6255A1005109F3 /* Mesh.h */,
 				AC9AB6FE2B6255B7005109F3 /* Triangle.h */,
 				ACEE434C2B629087003979DA /* Shader.h */,
+				AC6074D62B6BCAE8008F356D /* Texture.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -140,6 +144,7 @@
 				AC8BE67A2B693F5300C36B29 /* Window.cpp */,
 				AC8BE67C2B693F7600C36B29 /* Material.cpp */,
 				AC7C8C7C2B6A5F67009BA47B /* stb.cpp */,
+				AC6074D52B6BCAE8008F356D /* Texture.cpp */,
 			);
 			path = "cpp files";
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */,
 				AC8BE6772B693EF300C36B29 /* Shader.cpp in Sources */,
 				AC8BE6792B693F2C00C36B29 /* Triangle.cpp in Sources */,
+				AC6074D72B6BCAE8008F356D /* Texture.cpp in Sources */,
 				FA950B092B5F16770094CAA0 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
