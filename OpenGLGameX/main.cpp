@@ -15,8 +15,8 @@ int main() {
     
     Window window {800, 600};
         
-    Texture texture1 { "container.jpg", GL_TEXTURE0};
-    Texture texture2 { "swirl.jpg", GL_TEXTURE1};
+    Texture pattern { "container.jpg", GL_TEXTURE0};
+    Texture swirl { "swirl.jpg", GL_TEXTURE1};
 
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
@@ -53,6 +53,18 @@ int main() {
     };
     
     Mesh mesh4 { vertices4, size(vertices4) };
+    
+    Vertex vertices5[]{
+        // positions                         // colors          // texture coords
+        Vertex{Vector3{ 0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},   // top right
+        Vertex{Vector3{ 0.5f, -0.5f, 0.0f},   Colour::green,     Vector2{1.0f, 0.0f}},   // bottom right
+        Vertex{Vector3{-0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}},   // bottom left
+        Vertex{Vector3{-0.5f,  0.5f, 0.0f},   Colour::yellow,    Vector2{0.0f, 1.0f}},   // top left
+        Vertex{Vector3{ 0.5f,  0.5f, 0.0f},   Colour::red,       Vector2{1.0f, 1.0f}},
+        Vertex{Vector3{-0.5f, -0.5f, 0.0f},   Colour::blue,      Vector2{0.0f, 0.0f}}
+    };
+    
+    Mesh mesh5 { vertices5, size(vertices5) };
     
     
     Shader vertexShader {"vertexShader.glsl", GL_VERTEX_SHADER};
@@ -96,7 +108,11 @@ int main() {
     
     Triangle c {&mesh3, &rainbow};
     
-    Triangle d {&mesh4, &texMaterial};
+    Triangle d {&mesh4, &texMaterial, &swirl};
+    d.offset = -0.5f;
+    
+    Triangle e {&mesh5, &texMaterial, &pattern};
+    e.offset = 0.5f;
 
 //    Render only outlines
 //    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
@@ -116,6 +132,8 @@ int main() {
 //        d.offset = time;
         
         d.Render();
+        e.Render();
+        
         window.Present();
     }
     

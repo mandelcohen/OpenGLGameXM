@@ -7,12 +7,13 @@ using namespace std;
 class Texture{
     
 public:
+    unsigned int textureID;
+    
     Texture(const char* imagePath, int textureUnit)
     {
         int width, height, nrChannels;
         unsigned char* data = stbi_load(imagePath, &width, &height, &nrChannels, 0);
         
-        unsigned int textureID;
         glGenTextures(1, &textureID);
         glActiveTexture(textureUnit); // before binding
         glBindTexture(GL_TEXTURE_2D, textureID);

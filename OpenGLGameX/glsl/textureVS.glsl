@@ -10,8 +10,8 @@ uniform float offsetX;
 
 void main()
 {
-//    gl_Position = vec4(aPos.x + offsetX, aPos.yz, 1.0);
-    gl_Position = vec4(aPos, 1.0);
+    gl_Position = vec4(aPos.x + offsetX, aPos.yz, 1.0);
+//    gl_Position = vec4(aPos, 1.0);
     ourColor = aColor;
     TexCoord = aTexCoord;
 //    TexCoord = vec2(aPos.x + offsetX, aPos.y);
