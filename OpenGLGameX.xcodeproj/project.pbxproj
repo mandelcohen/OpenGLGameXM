@@ -21,6 +21,8 @@
 		ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5162B6A818D00432A21 /* container.jpg */; };
 		ACB3E5192B6A8F9500432A21 /* textureFS.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5152B6A7C9700432A21 /* textureFS.glsl */; };
 		ACB3E51A2B6A8F9500432A21 /* textureVS.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACB3E5182B6A8D2600432A21 /* textureVS.glsl */; };
+		ACD13D1E2B6BA699002D39E6 /* catagonia.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACD13D1C2B6BA699002D39E6 /* catagonia.jpg */; };
+		ACD13D1F2B6BA699002D39E6 /* swirl.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACD13D1D2B6BA699002D39E6 /* swirl.jpg */; };
 		ACF6BDA12B68F6C400E5DE52 /* yellowFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC4651BB2B67FD06004C6589 /* yellowFragmentShader.glsl */; };
 		ACF6BDA22B68F6CA00E5DE52 /* rainbowShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */; };
 		FA950AF22B5F0F9A0094CAA0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA950AF12B5F0F9A0094CAA0 /* main.cpp */; };
@@ -36,6 +38,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				ACD13D1E2B6BA699002D39E6 /* catagonia.jpg in CopyFiles */,
+				ACD13D1F2B6BA699002D39E6 /* swirl.jpg in CopyFiles */,
 				ACB3E5192B6A8F9500432A21 /* textureFS.glsl in CopyFiles */,
 				ACB3E51A2B6A8F9500432A21 /* textureVS.glsl in CopyFiles */,
 				ACB3E5172B6A81B000432A21 /* container.jpg in CopyFiles */,
@@ -72,6 +76,8 @@
 		ACB3E5162B6A818D00432A21 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		ACB3E5182B6A8D2600432A21 /* textureVS.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = textureVS.glsl; sourceTree = "<group>"; };
 		ACCB9BDF2B615C4500FA7358 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		ACD13D1C2B6BA699002D39E6 /* catagonia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = catagonia.jpg; sourceTree = "<group>"; };
+		ACD13D1D2B6BA699002D39E6 /* swirl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swirl.jpg; sourceTree = "<group>"; };
 		ACEE434C2B629087003979DA /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		ACF6BDA02B68F69100E5DE52 /* rainbowShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = rainbowShader.glsl; sourceTree = "<group>"; };
 		FA950AEE2B5F0F9A0094CAA0 /* OpenGLGameX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameX; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +143,8 @@
 		FA950AE52B5F0F9A0094CAA0 = {
 			isa = PBXGroup;
 			children = (
+				ACD13D1C2B6BA699002D39E6 /* catagonia.jpg */,
+				ACD13D1D2B6BA699002D39E6 /* swirl.jpg */,
 				ACB3E5162B6A818D00432A21 /* container.jpg */,
 				FA950AF02B5F0F9A0094CAA0 /* OpenGLGameX */,
 				FA950AEF2B5F0F9A0094CAA0 /* Products */,

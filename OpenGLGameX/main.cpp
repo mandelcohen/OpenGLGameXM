@@ -18,7 +18,7 @@ int main() {
     
 //    texture
     int width, height, nrChannels;
-    unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("swirl.jpg", &width, &height, &nrChannels, 0);
     
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -130,9 +130,9 @@ int main() {
 //        b.Render();
 //        c.Render();
         
-        float timeValue = glfwGetTime();
-        float time = (sin(timeValue) / 2.0f);
-        d.offset = time;
+//        float timeValue = glfwGetTime();
+//        float time = (cos(timeValue));
+//        d.offset = time;
         
         d.Render();
         window.Present();
