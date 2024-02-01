@@ -26,6 +26,12 @@ public:
         float offsetLocation = glGetUniformLocation(material->shaderProgram, "offsetX");
         glUniform1f(offsetLocation, offset);
         
+        int tex1Location = glGetUniformLocation(material->shaderProgram, "ourTexture");
+        glUniform1i(tex1Location, 0);
+        
+        int tex2Location = glGetUniformLocation(material->shaderProgram, "blendTexture");
+        glUniform1i(tex2Location, 1);
+        
         mesh->Render();
     }
 };

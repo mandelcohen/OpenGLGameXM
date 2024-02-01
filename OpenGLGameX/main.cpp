@@ -18,13 +18,12 @@ int main() {
     
 //    texture
     int width, height, nrChannels;
-    unsigned char *data = stbi_load("swirl.jpg", &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load("swirl.jpg", &width, &height, &nrChannels, 0);
     
     unsigned int textureID;
     glGenTextures(1, &textureID);
+    glActiveTexture(GL_TEXTURE0); // before binding
     glBindTexture(GL_TEXTURE_2D, textureID);
-    
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -34,8 +33,28 @@ int main() {
     {
         std::cout << "Failed to load texture" << std::endl;
     }
-//    glGenerateMipmap(GL_TEXTURE_2D);
     stbi_image_free(data);
+    
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char* data1 = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+    
+    unsigned int textureID1;
+    glGenTextures(1, &textureID1);
+    glActiveTexture(GL_TEXTURE1); // before binding
+    glBindTexture(GL_TEXTURE_2D, textureID1);
+    if (data1)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data1);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data1);
+    
+    
+    
     
     Vertex vertices1[] {
         Vertex{Vector3{-1.0f, -0.5f, 0.0f}},
@@ -91,7 +110,7 @@ int main() {
 
     Shader attributesShader{"fragmentAttributes.glsl", GL_FRAGMENT_SHADER};
     
-    Shader textureF {"textureFS.glsl", GL_FRAGMENT_SHADER};
+    Shader textureF {"blendTexFS.glsl", GL_FRAGMENT_SHADER};
     
     
     Material orange {vertexShader, orangeShader};
