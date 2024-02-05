@@ -109,7 +109,7 @@ int main() {
     Triangle c {&mesh3, &rainbow};
     
     Triangle d {&mesh4, &texMaterial, &swirl};
-    d.offset = -0.5f;
+    d.offset = -0.5f; // offsett so we see both
     
     Triangle e {&mesh5, &texMaterial, &pattern};
     e.offset = 0.5f;
