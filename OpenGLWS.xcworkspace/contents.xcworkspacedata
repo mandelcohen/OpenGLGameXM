@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:OpenGLGameX.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Maths/Maths.xcodeproj">
    </FileRef>
 </Workspace>

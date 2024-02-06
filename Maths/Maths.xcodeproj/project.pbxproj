@@ -13,12 +13,23 @@
 		AC99779F2B72247D001FDD6C /* Vector3.h in Headers */ = {isa = PBXBuildFile; fileRef = AC99779D2B72247D001FDD6C /* Vector3.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC9977B92B723C95001FDD6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC9977B52B723C95001FDD6C /* OpenGLGameX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA950AEE2B5F0F9A0094CAA0;
+			remoteInfo = OpenGLGameX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AC99778E2B72235C001FDD6C /* libMaths.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMaths.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9977912B72235C001FDD6C /* Maths.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Maths.h; sourceTree = "<group>"; };
 		AC9977952B72235C001FDD6C /* Maths.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Maths.cpp; sourceTree = "<group>"; };
 		AC99779C2B72247D001FDD6C /* Vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
 		AC99779D2B72247D001FDD6C /* Vector3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		AC9977B52B723C95001FDD6C /* OpenGLGameX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenGLGameX.xcodeproj; path = ../../../OpenGLGameX.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +80,19 @@
 		AC9977A12B722491001FDD6C /* cpp */ = {
 			isa = PBXGroup;
 			children = (
+				AC9977B52B723C95001FDD6C /* OpenGLGameX.xcodeproj */,
 				AC9977952B72235C001FDD6C /* Maths.cpp */,
 				AC99779C2B72247D001FDD6C /* Vector3.cpp */,
 			);
 			path = cpp;
+			sourceTree = "<group>";
+		};
+		AC9977B62B723C95001FDD6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC9977BA2B723C95001FDD6C /* OpenGLGameX */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,12 +152,28 @@
 			mainGroup = AC9977852B72235C001FDD6C;
 			productRefGroup = AC99778F2B72235C001FDD6C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AC9977B62B723C95001FDD6C /* Products */;
+					ProjectRef = AC9977B52B723C95001FDD6C /* OpenGLGameX.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AC99778D2B72235C001FDD6C /* Maths */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AC9977BA2B723C95001FDD6C /* OpenGLGameX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = OpenGLGameX;
+			remoteRef = AC9977B92B723C95001FDD6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC99778B2B72235C001FDD6C /* Sources */ = {
