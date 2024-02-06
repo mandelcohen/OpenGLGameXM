@@ -6,7 +6,7 @@ public:
     Vector3(float x, float y, float z) : x{ x }, y{ y }, z{ z } { }
 
     bool operator==(const Vector3& other) const {
-        return x == other.x, y == other.y, z == other.z;
+        return x == other.x && y == other.y && z == other.z;
     }
 
     // TODO:
